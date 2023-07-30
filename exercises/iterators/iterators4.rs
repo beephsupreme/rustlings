@@ -3,9 +3,10 @@
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
-pub fn factorial(num: u64) -> u64 {
+pub fn factorial(mut num: u64) -> u64 {
+    if num == 0  { num += 1; }
+    (1..num).try_fold(num, u64::checked_mul).unwrap()
     // Complete this function to return the factorial of num
     // Do not use:
     // - return
